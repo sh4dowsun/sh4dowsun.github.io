@@ -1,60 +1,71 @@
 body {
     font-family: Arial, sans-serif;
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "nav nav"
-        "section aside"
-        "article aside"
-        "footer footer";
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 10px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h1 {
-    text-align: center;
-}
-
-h2 {
-    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
-    grid-area: header;
     background: #477abd;
     padding: 10px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-  
-.nav {
-    grid-area: nav;
+
+.top-nav {
     background: #95c2eb;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
 }
-  
-.section {
-    grid-area: section;
+
+.top-nav a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.top-nav a:hover {
+    background-color: #555;
+    color: red;
+}
+
+.vertical-nav {
+    float: left;
+    width: 20%;
+    background: #c0b2ef;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: calc(100vh - 340px);
+}
+
+.vertical-nav a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.vertical-nav a:hover {
+    color: red;
+}
+
+.article {
+    margin-left: 5%;
     background: #f9f9f9;
-    padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-  
-.aside {
-    grid-area: aside;
-    background: #666686;
+    float: left;
+    width: 79%;
     padding: 10px;
-    border-radius: 10px;
+    box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: calc(100vh - 340px);
 }
 
 .picture {
@@ -63,19 +74,33 @@ h2 {
     margin-right: auto;
     border-radius: 10px;
 }
-  
-.article {
-    grid-area: article;
-    background: #c0b2ef;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+h1, h2 {
+    color: #333;
 }
-  
+
+p {
+    line-height: 1.6;
+    padding: 10px;
+    background-color: #eef;
+    border-radius: 5px;
+}
+
 .footer {
-    grid-area: footer;
     background: #ccc;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    clear: both;
+}
+
+ .main::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.main > div {
+    margin: 0;
 }
